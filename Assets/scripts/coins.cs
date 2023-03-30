@@ -26,7 +26,7 @@ public class coins : MonoBehaviour
         times += Time.deltaTime;
         if (times > 3 && curcoins <= maxcoinsvalue)
         {
-            print("aaaa");
+            
             curcoins += increasecoin;
             if (curcoins + increasecoin >= maxcoinsvalue) 
                 curcoins = maxcoinsvalue; 

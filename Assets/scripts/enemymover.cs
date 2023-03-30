@@ -6,12 +6,22 @@ public class enemymover : MonoBehaviour
 {
     [SerializeField] private List<waypoint> waypoints = new List<waypoint>();
     [SerializeField] private float speed = 1f;
+    [SerializeField] private int waitime;
     private WaitForEndOfFrame pathwaittime;
     //[SerializeField][Range(0f, 1f)] private float travelpoint = 0f;
+    private void OnEnable()
+    {
+        FindPath();
+        ReturnToStart();
+        StartCoroutine(move());
+    }
     private void Start()
     {
-        pathwaittime = new WaitForEndOfFrame();
-        StartCoroutine(move());
+        pathwaittime = new WaitForEndOfFrame(); 
+    }
+    void ReturnToStart()
+    {
+        transform.position = waypoints[0].transform.position;
     }
      IEnumerator move()
     {
@@ -30,10 +40,19 @@ public class enemymover : MonoBehaviour
             
         }
         
+        gameObject.SetActive(false);
+        
     }
-    private void OnParticleCollision(GameObject other)
+    void FindPath()
     {
-        Destroy(gameObject);
+        waypoints.Clear();
+        var path = GameObject.FindGameObjectsWithTag("path");
+        foreach (var waypoint in path)
+        {
+            waypoints.Add(waypoint.GetComponent<waypoint>());
+        }
+        
     }
+    
 
 }

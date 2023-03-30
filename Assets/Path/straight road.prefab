@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: straight road
       objectReference: {fileID: 0}
+    - target: {fileID: 3245924226468523333, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: m_TagString
+      value: path
+      objectReference: {fileID: 0}
     - target: {fileID: 5458980145721829254, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_Mesh
       value: 
