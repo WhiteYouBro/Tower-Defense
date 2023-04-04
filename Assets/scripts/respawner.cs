@@ -1,12 +1,11 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class respawner : MonoBehaviour
 {
-    [SerializeField] private int respawnseconds;
+    [Range(1f,30f)][SerializeField] private int respawnseconds;
+    [Range(1, 30f)][SerializeField] private int poolsize = 5;
     [SerializeField] private GameObject enemy;
-    [SerializeField] private int poolsize = 5;
 
     private WaitForSecondsRealtime waittime;
     private GameObject[] pool;
@@ -36,12 +35,12 @@ public class respawner : MonoBehaviour
     {
         while (true)
         {
-            Enableonjectinpool();
+            Enableobjectinpool();
             yield return waittime;
         }
     }
 
-    private void Enableonjectinpool()
+    private void Enableobjectinpool()
     {
         foreach(var objectenemy in pool)
         {

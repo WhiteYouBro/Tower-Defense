@@ -6,8 +6,7 @@ using TMPro;
 public class waypoint : MonoBehaviour
 {
     [SerializeField] private bool isnotplaycable;
-    [SerializeField] private GameObject tower;
-    [SerializeField] private coins coems;
+    [SerializeField] private tower _tower;  
 
     public bool IsPlaycable
     {
@@ -20,9 +19,9 @@ public class waypoint : MonoBehaviour
         {   
             return;
         }
-        coems.curcoins -= 15;
-        Instantiate(tower, transform.position, Quaternion.identity);
-        isnotplaycable = true;
+        bool isplaced = _tower.spawntower(_tower, transform.position);
+        isnotplaycable = isplaced;
+        
     }
    
 }

@@ -131,9 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isnotplaycable: 0
-  tower: {fileID: 3219458064393657486, guid: dba7b1b59dd6e6248a03cecec7f0201a, type: 3}
-  coems: {fileID: 0}
-  textofcoord: {fileID: 2119972234842434255}
+  _tower: {fileID: 4149009151976870550, guid: dba7b1b59dd6e6248a03cecec7f0201a, type: 3}
 --- !u!65 &1060785040213652043
 BoxCollider:
   m_ObjectHideFlags: 0

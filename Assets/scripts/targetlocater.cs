@@ -8,8 +8,10 @@ public class targetlocater : MonoBehaviour
     [SerializeField] private Transform topmesh;
     [SerializeField] private float radius = 15f;
     [SerializeField] private ParticleSystem projecttileparticle;
+
     private bool isreadyshoot;
     private Transform target;
+
     private void Update()
     {
         Findclosesttarger();
@@ -38,6 +40,7 @@ public class targetlocater : MonoBehaviour
         Attack(targetdistance < radius);
         topmesh.LookAt(target);
     }
+
     private void Attack(bool isshoot)
     {
         var emmision = projecttileparticle.emission;

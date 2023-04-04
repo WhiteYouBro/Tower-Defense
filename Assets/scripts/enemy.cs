@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int reward = 25;
+    [SerializeField] private int goladpenalty = 25;
+    [SerializeField] private int damage = 30;
+
+    private bank _bank;
+
+    private void Start()
     {
-        
+        _bank = FindObjectOfType<bank>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RewardGold()
     {
-        
+        if (_bank == null) return;
+        _bank.deposit(reward);
+    }
+    public void PenaltyGold()
+    {
+        if (_bank == null) return;
+        _bank.withdraw(goladpenalty);
+    }
+    public void damagecastle()
+    {
+        _bank.withdraw(damage);
     }
 }

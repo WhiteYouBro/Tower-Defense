@@ -18,6 +18,7 @@ public class coordinates : MonoBehaviour
     {
         waypoint = GetComponentInParent<waypoint>();
         label = GetComponent<TMP_Text>();
+        label.enabled = false;
         DisplayCoord();
     }
     private void Update()
