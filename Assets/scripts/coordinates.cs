@@ -5,20 +5,22 @@ using TMPro;
 [ExecuteAlways]
 public class coordinates : MonoBehaviour
 {
+    [SerializeField] private Color defaultcolor = Color.white;
+    [SerializeField] private Color blockedcolor = Color.grey;
+    [SerializeField] private Color exploredcolor = Color.yellow;
+    [SerializeField] private Color pathcolor = new Color(1f, 0.5f, 0);
     private Vector2 position1;
     TMP_Text label;
     private Vector2Int coordinates1;
     private bool ispressedkey;
-    private Color blockedcolor = Color.grey;
-    private Color defaultcolor = Color.white;
-    private waypoint waypoint;
+    private gridmanager _gridmanager;
     
     // Start is called before the first frame update
     private void Awake()
     {
-        waypoint = GetComponentInParent<waypoint>();
+        _gridmanager = FindObjectOfType<gridmanager>();
         label = GetComponent<TMP_Text>();
-        label.enabled = false;
+        label.enabled = true;
         DisplayCoord();
     }
     private void Update()
@@ -35,7 +37,22 @@ public class coordinates : MonoBehaviour
     }
     void ColorOfCoord()
     {
-        label.color = waypoint.IsPlaycable ? defaultcolor : blockedcolor;
+        if (_gridmanager == null)
+            return;
+        node node = _gridmanager.GetNode(coordinates1);
+        
+        if (node == null)
+            return;
+        if (!node.iswalkable)
+            label.color = blockedcolor;
+        else if (node.ispath)
+            label.color = pathcolor;
+        else if (node.isexplored)
+            label.color = exploredcolor;
+        else
+            label.color = defaultcolor;
+
+        //label.color = waypoint.IsPlaycable ? defaultcolor : blockedcolor;
     }
     void UpdateObjectCoord()
     {

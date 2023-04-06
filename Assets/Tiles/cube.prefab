@@ -330,3 +330,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220689465969fea4db5457459278177d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockedcolor: {r: 1, g: 0, b: 0, a: 1}
