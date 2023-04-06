@@ -1,20 +1,23 @@
+using Newtonsoft.Json.Linq;
 using System;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class settings : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown resolutionDropDown;
     [SerializeField] private GameObject panelUI;
     [SerializeField] private GameObject panelofmainmenu;
-    [SerializeField] public AudioSettings settings1;
+    [SerializeField] private AudioSource audioSource;
+    private float musicVol = 1f;
 
-
+    
     Resolution[] resolutions;
     // Start is called before the first frame update
     void Start()
     {
-        
         resolutionDropDown.ClearOptions();
         List<string> options = new List<string>();
         resolutions = Screen.resolutions;
@@ -70,5 +73,14 @@ public class settings : MonoBehaviour
         panelofmainmenu.SetActive(true);
     }
 
+    public void SetVolume(float vol)
+    {
+        musicVol = vol;
+    }
+
+    private void Update()
+    {
+        audioSource.volume = musicVol;
+    }
 
 }
