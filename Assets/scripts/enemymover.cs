@@ -5,7 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(enemy))]
 public class enemymover : MonoBehaviour
 {
-    [SerializeField] private List<waypoint> waypoints = new List<waypoint>();
+    [SerializeField] private List<Tile> waypoints = new List<Tile>();
     [SerializeField] private float speed = 1f;
     [SerializeField] private int waitime;
 
@@ -52,7 +52,7 @@ public class enemymover : MonoBehaviour
         var parent = GameObject.FindGameObjectWithTag("path");
         foreach (Transform child in parent.transform)
         {
-            var waypoint = child.GetComponent<waypoint>();
+            var waypoint = child.GetComponent<Tile>();
             if (waypoint != null)
                 waypoints.Add(waypoint);
         }

@@ -39,7 +39,7 @@ public class coordinates : MonoBehaviour
     {
         if (_gridmanager == null)
             return;
-        node node = _gridmanager.GetNode(coordinates1);
+        Node node = _gridmanager.GetNode(coordinates1);
         
         if (node == null)
             return;
@@ -61,8 +61,8 @@ public class coordinates : MonoBehaviour
     private void DisplayCoord()
     {
          var position = transform.parent.position;
-         coordinates1.x = Mathf.RoundToInt(position.x / EditorSnapSettings.move.x);
-         coordinates1.y = Mathf.RoundToInt(position.z / EditorSnapSettings.move.z);
+         coordinates1.x = Mathf.RoundToInt(position.x / _gridmanager.UnityGridSiza);
+         coordinates1.y = Mathf.RoundToInt(position.z / _gridmanager.UnityGridSiza);
          label.text = $"{coordinates1.x}, {coordinates1.y}";
     }
 }
