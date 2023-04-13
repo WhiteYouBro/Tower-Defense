@@ -9,10 +9,9 @@ public class coordinates : MonoBehaviour
     [SerializeField] private Color blockedcolor = Color.grey;
     [SerializeField] private Color exploredcolor = Color.yellow;
     [SerializeField] private Color pathcolor = new Color(1f, 0.5f, 0);
-    private Vector2 position1;
+
     TMP_Text label;
     private Vector2Int coordinates1;
-    private bool ispressedkey;
     private gridmanager _gridmanager;
     
     // Start is called before the first frame update
@@ -60,9 +59,12 @@ public class coordinates : MonoBehaviour
     }
     private void DisplayCoord()
     {
-         var position = transform.parent.position;
-         coordinates1.x = Mathf.RoundToInt(position.x / _gridmanager.UnityGridSiza);
-         coordinates1.y = Mathf.RoundToInt(position.z / _gridmanager.UnityGridSiza);
-         label.text = $"{coordinates1.x}, {coordinates1.y}";
+        
+            var position = transform.parent.position;
+            coordinates1.x = Mathf.RoundToInt(position.x / _gridmanager.UnityGridSiza);
+            coordinates1.y = Mathf.RoundToInt(position.z / _gridmanager.UnityGridSiza);
+            label.text = $"{coordinates1.x}, {coordinates1.y}";
+        
     }
+
 }

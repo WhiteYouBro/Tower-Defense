@@ -5,7 +5,10 @@ using System;
 public class bank : MonoBehaviour
 {
     [SerializeField] private int startbalance = 250;
+    [SerializeField] private int scorebalance = 500;
+
     [SerializeField] private TextMeshProUGUI displaybalance;
+    [SerializeField] private TextMeshProUGUI displayscore;
 
     private int curbalance;
     public int currbalance
@@ -16,6 +19,7 @@ public class bank : MonoBehaviour
 
     private void Start()
     {
+        displayscore.text = Convert.ToString(scorebalance);
         curbalance = startbalance;
         UpdateBalance();
     }
@@ -24,9 +28,9 @@ public class bank : MonoBehaviour
         curbalance += Mathf.Abs(value);
         UpdateBalance();
 
-        if (curbalance > 500)
+        if (curbalance >= scorebalance)
         {
-            RestartScene();
+            LoadNextLevel();
         }
 
     }
@@ -44,6 +48,11 @@ public class bank : MonoBehaviour
     void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void UpdateBalance()
