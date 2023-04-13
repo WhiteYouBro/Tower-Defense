@@ -5,34 +5,42 @@ using System.Collections;
 [RequireComponent(typeof(enemy))]
 public class enemymover : MonoBehaviour
 {
-    [SerializeField] private List<Tile> waypoints = new List<Tile>();
+    [SerializeField] private List<Node> path = new List<Node>();
     [SerializeField] private float speed = 1f;
     [SerializeField] private int waitime;
+
+    private gridmanager gridmanager;
+    private pathfinder pathfinder;
 
     private WaitForEndOfFrame pathwaittime;
     private enemy _enemy;
     //[SerializeField][Range(0f, 1f)] private float travelpoint = 0f;
-    private void OnEnable()
+    private void Awake()
     {
-        FindPath();
-        ReturnToStart();
-        StartCoroutine(move());
-    }
-    private void Start()
-    {
+        pathfinder = FindObjectOfType<pathfinder>();
+        gridmanager = FindObjectOfType<gridmanager>();
         _enemy = GetComponent<enemy>();
         pathwaittime = new WaitForEndOfFrame(); 
     }
+    private void OnEnable()
+    {
+        
+        ReFindPath();
+        ReturnToStart();
+        StartCoroutine(move());
+    }
+
     void ReturnToStart()
     {
-        transform.position = waypoints[0].transform.position;
+        transform.position = gridmanager.GetPositionFromCoordinatate(pathfinder.Startingcoord);
     }
      IEnumerator move()
     {
-        foreach (var waypoint in waypoints)
+        for (int i = 1; i < path.Count; i++)
         {
+            var waypoint = path[i];
             Vector3 startpos = transform.position;
-            Vector3 finalpos = waypoint.transform.position;
+            Vector3 finalpos = gridmanager.GetPositionFromCoordinatate(waypoint.cooridnates);
             float travelpercent = 0f;
             while(travelpercent < 1)
             {
@@ -46,17 +54,10 @@ public class enemymover : MonoBehaviour
         FinishPath();
         
     }
-    void FindPath()
+    void ReFindPath()
     {
-        waypoints.Clear();
-        var parent = GameObject.FindGameObjectWithTag("path");
-        foreach (Transform child in parent.transform)
-        {
-            var waypoint = child.GetComponent<Tile>();
-            if (waypoint != null)
-                waypoints.Add(waypoint);
-        }
-        
+        path.Clear();
+        path = pathfinder.GetNewPath();
     }
 
     private void FinishPath()

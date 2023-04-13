@@ -7,8 +7,18 @@ public class pathfinder : MonoBehaviour
     [SerializeField] private Node currentsearchnode;
 
     [SerializeField] private Vector2Int startingcoord;
+    public Vector2Int Startingcoord
+    {
+        get { return startingcoord; }
+    }
+
+
 
     [SerializeField] private Vector2Int endofcoord;
+    public Vector2Int EndOfCoord
+    {
+        get {return endofcoord; }
+    }
 
     private Dictionary<Vector2Int, Node> reached = new();
     private Node startingnode;
@@ -28,15 +38,16 @@ public class pathfinder : MonoBehaviour
         _gridmanager = FindObjectOfType<gridmanager>();
 
         if (_gridmanager != null)
+        {
             grid = _gridmanager.Grid;
+            startingnode = grid[startingcoord];
+            endnode = grid[endofcoord];
+        }
     }
 
     private void Start()
     {
-        startingnode = grid[startingcoord];
-        endnode = grid[endofcoord];
-        BreadthFirstSearch();
-        BuildPath();
+        GetNewPath();
     }
 
     public List<Node> GetNewPath()
@@ -76,6 +87,13 @@ public class pathfinder : MonoBehaviour
 
     private void BreadthFirstSearch()
     {
+        startingnode.iswalkable = true;
+        endnode.iswalkable = true;
+
+        frontier.Clear();
+        reached.Clear();
+
+
         bool isrunning = true;
         frontier.Enqueue(startingnode);
         reached.Add(startingcoord, startingnode);
@@ -112,5 +130,9 @@ public class pathfinder : MonoBehaviour
         //
         path.Reverse();
         return path;
+    }
+    public void NotifyRecievers()
+    {
+        BroadcastMessage("ReFindPath", SendMessageOptions.DontRequireReceiver);
     }
 }

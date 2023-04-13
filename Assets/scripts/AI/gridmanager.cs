@@ -36,11 +36,11 @@ public class gridmanager : MonoBehaviour
 
     }
 
-    public Vector3 GetCoordFromCoordinatate(Vector2Int coordinates)
+    public Vector3 GetPositionFromCoordinatate(Vector2Int coordinates)
     {
         Vector3 coords = new Vector3();
         coords.x = coordinates.x * unityGridSize;
-        coords.y = coordinates.y * unityGridSize;
+        coords.z = coordinates.y * unityGridSize;
         return coords;
     }
 

@@ -5,6 +5,8 @@ public class Tile : MonoBehaviour
     [SerializeField] private bool isnotplaycable;
     [SerializeField] private tower _tower;  
 
+    
+
     public bool IsPlaycable
     {
         get { return !isnotplaycable; }
@@ -34,14 +36,17 @@ public class Tile : MonoBehaviour
     }
     private void OnMouseDown()
     {
+
         if (_gridmanager.GetNode(coordinates).iswalkable)
         {
+            
             bool isplaced = _tower.spawntower(_tower, transform.position);
             isnotplaycable = isplaced;
             if (isplaced)
             {
                 _gridmanager.BlockNode(coordinates);
                 _pathfinder.GetNewPath();
+                _pathfinder.NotifyRecievers();
             }
 
         }

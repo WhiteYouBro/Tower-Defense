@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7139646703208685260}
   - component: {fileID: 5458980145721829254}
   - component: {fileID: 8856200729057805074}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3153982043071149391}
   - component: {fileID: 805040496474182715}
   - component: {fileID: 1060785040213652043}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 7074928452217753750}
   - component: {fileID: 2119972234842434255}
   - component: {fileID: 6357894713929321185}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,4 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220689465969fea4db5457459278177d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultcolor: {r: 1, g: 1, b: 1, a: 1}
   blockedcolor: {r: 1, g: 0, b: 0, a: 1}
+  exploredcolor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathcolor: {r: 1, g: 0.5, b: 0, a: 1}

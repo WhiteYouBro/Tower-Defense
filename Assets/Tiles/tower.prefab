@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topmesh: {fileID: 3144582324300694500}
-  radius: 15
+  radius: 25
   projecttileparticle: {fileID: 2276797064051123878}
 --- !u!114 &4149009151976870550
 MonoBehaviour:
@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bcc03ea0e7cca4c9351f21af33870a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 75
 --- !u!1 &4367116821477849899
 GameObject:
   m_ObjectHideFlags: 0
