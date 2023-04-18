@@ -3,6 +3,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     [SerializeField] private bool isnotplaycable;
+    [SerializeField] private bool isnotwalkable;
     [SerializeField] private tower _tower;  
 
     
@@ -28,7 +29,7 @@ public class Tile : MonoBehaviour
         if (_gridmanager != null)
         {
             coordinates = _gridmanager.GetCoordFromPosition(transform.position);
-            if (!IsPlaycable)
+            if (isnotwalkable)
             {
                 _gridmanager.BlockNode(coordinates);
             }
@@ -37,7 +38,7 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
 
-        if (_gridmanager.GetNode(coordinates).iswalkable)
+        if (_gridmanager.GetNode(coordinates).iswalkable && !isnotplaycable)
         {
             
             bool isplaced = _tower.spawntower(_tower, transform.position);

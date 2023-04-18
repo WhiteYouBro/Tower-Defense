@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -939,6 +939,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1802377668}
     m_Modifications:
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: isnotwalkable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
       value: 1
       objectReference: {fileID: 0}
@@ -1252,6 +1256,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1802377668}
     m_Modifications:
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: isnotwalkable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
       value: 1
       objectReference: {fileID: 0}
@@ -1343,6 +1351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1508,7 +1517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 123207630690511875, guid: e087f990d0ffa4f4c9f7dcf9b9f96eae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.21488
+      value: -21.5
       objectReference: {fileID: 0}
     - target: {fileID: 123207630690511875, guid: e087f990d0ffa4f4c9f7dcf9b9f96eae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1654,7 +1663,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119972234842434255, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_text
@@ -1928,7 +1937,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119972234842434255, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_text
@@ -2640,7 +2649,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119972234842434255, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_text
@@ -3289,7 +3298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119972234842434255, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_text
@@ -3373,6 +3382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1802377668}
     m_Modifications:
+    - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: isnotwalkable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
       value: 1
@@ -3698,7 +3711,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119972234842434255, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_text
@@ -4496,8 +4509,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1802377668}
     m_Modifications:
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: isnotwalkable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119972234842434255, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_text
@@ -4799,7 +4816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 123207630690511875, guid: e087f990d0ffa4f4c9f7dcf9b9f96eae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.39322
+      value: -20.26
       objectReference: {fileID: 0}
     - target: {fileID: 123207630690511875, guid: e087f990d0ffa4f4c9f7dcf9b9f96eae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4807,7 +4824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 123207630690511875, guid: e087f990d0ffa4f4c9f7dcf9b9f96eae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.207884
+      value: 28.86
       objectReference: {fileID: 0}
     - target: {fileID: 123207630690511875, guid: e087f990d0ffa4f4c9f7dcf9b9f96eae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6376,6 +6393,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: isnotwalkable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
       value: 1
       objectReference: {fileID: 0}
@@ -6587,6 +6608,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: isnotwalkable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
       value: 1
       objectReference: {fileID: 0}
@@ -6661,8 +6686,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1802377668}
     m_Modifications:
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: isnotwalkable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119972234842434255, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_text
@@ -7187,7 +7216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119972234842434255, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_text
@@ -7368,6 +7397,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: isnotwalkable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
       value: 0
       objectReference: {fileID: 0}
@@ -7522,8 +7555,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1802377668}
     m_Modifications:
     - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
+      propertyPath: isnotwalkable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805040496474182715, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: isnotplaycable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119972234842434255, guid: 695b0371a61cac641807133eb51ab6ef, type: 3}
       propertyPath: m_text
@@ -8482,6 +8519,14 @@ PrefabInstance:
     - target: {fileID: 7347940849105722336, guid: 4ad85c7e857a85f448c9358837e679ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347940849105722337, guid: 4ad85c7e857a85f448c9358837e679ef, type: 3}
+      propertyPath: displayscore
+      value: 
+      objectReference: {fileID: 2013497449}
+    - target: {fileID: 7347940849105722337, guid: 4ad85c7e857a85f448c9358837e679ef, type: 3}
+      propertyPath: scorebalance
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7347940849105722337, guid: 4ad85c7e857a85f448c9358837e679ef, type: 3}
       propertyPath: displaybalance

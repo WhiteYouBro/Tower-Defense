@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class settings : MonoBehaviour
 {
-    [SerializeField] private TMP_Dropdown resolutionDropDown;
     [SerializeField] private GameObject panelUI;
     [SerializeField] private GameObject panelofmainmenu;
+    [SerializeField] private GameObject paneloflogo;
+
+    [SerializeField] private TMP_Dropdown resolutionDropDown;
+
     [SerializeField] private AudioSource audioSource;
+
     private float musicVol = 1f;
 
-    
     Resolution[] resolutions;
     // Start is called before the first frame update
     void Start()
@@ -70,6 +73,7 @@ public class settings : MonoBehaviour
     public void CloseSettings()
     {
         panelUI.SetActive(false);
+        paneloflogo.SetActive(true);
         panelofmainmenu.SetActive(true);
     }
 

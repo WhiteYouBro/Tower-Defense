@@ -5,6 +5,7 @@ public class buttons : MonoBehaviour
 {
     [SerializeField] private GameObject panelofmainmenu;
     [SerializeField] private GameObject panelsettings;
+    [SerializeField] private GameObject logopanel;
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -13,6 +14,7 @@ public class buttons : MonoBehaviour
     public void LoadSettings()
     {
         panelofmainmenu.SetActive(false);
+        logopanel.SetActive(false);
         panelsettings.SetActive(true);
     }
     public void ExitGame()
