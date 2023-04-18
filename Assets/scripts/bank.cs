@@ -52,6 +52,8 @@ public class bank : MonoBehaviour
 
     void LoadNextLevel()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+            SceneManager.LoadScene(0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
